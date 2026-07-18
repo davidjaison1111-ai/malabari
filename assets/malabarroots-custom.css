@@ -1,0 +1,610 @@
+/* ==========================================================================
+   MALABARROOTS — Enterprise Brand Layer for Shopify "Taste" v15.5.0
+   Palette: Cream #FDFBF7 · Forest #1A432B · Gold #D4AF37 · Terracotta #A0522D
+   Text: Charcoal #2C2C2C (headings) · Slate #4B5563 (body)
+   ========================================================================== */
+
+:root {
+  --mr-cream: #fdfbf7;
+  --mr-forest: #1a432b;
+  --mr-forest-deep: #12301e;
+  --mr-gold: #d4af37;
+  --mr-terracotta: #a0522d;
+  --mr-charcoal: #2c2c2c;
+  --mr-slate: #4b5563;
+  --mr-radius: 12px;
+  --mr-shadow-soft: 0 6px 24px rgba(26, 67, 43, 0.08);
+  --mr-shadow-lift: 0 14px 34px rgba(26, 67, 43, 0.16);
+  --mr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Global type & texture ------------------------------------------- */
+body {
+  color: var(--mr-slate);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, .h0, .h1, .h2, .h3 {
+  color: var(--mr-charcoal);
+  letter-spacing: 0.01em;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Buttery selection + focus */
+::selection { background: var(--mr-gold); color: var(--mr-forest-deep); }
+:focus-visible { outline: 2px solid var(--mr-gold); outline-offset: 3px; }
+
+/* ---- Custom scrollbars (page + cart drawer) --------------------------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--mr-cream); }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--mr-forest) 55%, var(--mr-cream));
+  border-radius: 20px;
+  border: 2px solid var(--mr-cream);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--mr-forest); }
+cart-drawer .drawer__contents::-webkit-scrollbar { width: 6px; }
+cart-drawer .drawer__contents::-webkit-scrollbar-thumb {
+  background: var(--mr-gold);
+  border: none;
+}
+
+/* ---- Buttons: lift + sheen ------------------------------------------- */
+.button,
+.shopify-challenge__button,
+.customer button {
+  transition: transform 0.25s var(--mr-ease), box-shadow 0.25s var(--mr-ease);
+  will-change: transform;
+}
+.button:hover:not([disabled]),
+.shopify-challenge__button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--mr-shadow-lift);
+}
+.button:active:not([disabled]) {
+  transform: translateY(0);
+  box-shadow: var(--mr-shadow-soft);
+}
+
+/* ---- Announcement bar: gold underscore, letterspaced ------------------ */
+.announcement-bar__message {
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+/* ---- Product cards: cross-fade + zoom + quick-add slide-up ------------ */
+.card--standard .card__inner,
+.card__media {
+  border-radius: var(--mr-radius);
+  overflow: hidden;
+}
+.card__media img {
+  transition: transform 0.8s var(--mr-ease), opacity 0.45s ease;
+}
+.card:hover .card__media img:first-child {
+  transform: scale(1.06);
+}
+.card-wrapper {
+  transition: transform 0.35s var(--mr-ease);
+}
+.card-wrapper:hover {
+  transform: translateY(-4px);
+}
+.card-wrapper:hover .card__inner {
+  box-shadow: var(--mr-shadow-lift);
+}
+/* Quick add slides up on hover (desktop) */
+@media screen and (min-width: 990px) {
+  .card .quick-add {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s var(--mr-ease), transform 0.3s var(--mr-ease);
+  }
+  .card-wrapper:hover .quick-add,
+  .card-wrapper:focus-within .quick-add {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Sale / badge pills */
+.badge {
+  border-radius: 40px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  background: var(--mr-terracotta);
+  color: var(--mr-cream);
+}
+.price__badge-sale {
+  background: var(--mr-terracotta);
+  color: var(--mr-cream);
+}
+.price--on-sale .price-item--regular {
+  color: var(--mr-slate);
+  opacity: 0.75;
+}
+.price--on-sale .price-item--sale {
+  color: var(--mr-forest);
+  font-weight: 700;
+}
+
+/* ---- PDP: gallery zoom + premium buy box ------------------------------ */
+.product__media img {
+  transition: transform 0.9s var(--mr-ease);
+}
+.product__media:hover img {
+  transform: scale(1.045);
+}
+.product__media,
+.product-media-container {
+  border-radius: var(--mr-radius);
+  overflow: hidden;
+}
+.product__title h1 {
+  line-height: 1.15;
+}
+.product-form__submit {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+/* Sticky Add-to-Cart on mobile */
+@media screen and (max-width: 749px) {
+  .product-form__buttons {
+    position: sticky;
+    bottom: 12px;
+    z-index: 4;
+  }
+  .product-form__submit {
+    box-shadow: 0 10px 28px rgba(26, 67, 43, 0.35);
+  }
+}
+
+/* ---- Trust badges (dietary metafield pills) --------------------------- */
+.mr-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0.4rem 0 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+.mr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--mr-forest);
+  background: color-mix(in srgb, var(--mr-forest) 8%, var(--mr-cream));
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 25%, transparent);
+}
+.mr-badge__icon {
+  color: var(--mr-gold);
+  font-weight: 800;
+}
+
+/* ---- Parsed description accordions ------------------------------------ */
+.mr-description-accordions {
+  margin-top: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--mr-forest) 18%, transparent);
+}
+.mr-accordion {
+  border-bottom: 1px solid color-mix(in srgb, var(--mr-forest) 18%, transparent);
+}
+.mr-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0.4rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--mr-charcoal);
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+.mr-accordion__summary::-webkit-details-marker { display: none; }
+.mr-accordion__summary:hover { color: var(--mr-forest); }
+.mr-accordion__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.mr-accordion__icon { font-size: 1.6rem; }
+.mr-accordion__caret {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--mr-forest);
+  border-bottom: 2px solid var(--mr-forest);
+  transform: rotate(45deg);
+  transition: transform 0.3s var(--mr-ease);
+  flex: 0 0 auto;
+}
+.mr-accordion[open] > .mr-accordion__summary .mr-accordion__caret {
+  transform: rotate(225deg);
+}
+.mr-accordion__content {
+  overflow: hidden;
+  padding: 0 0.4rem 1.6rem;
+  transition: max-height 0.4s var(--mr-ease), opacity 0.35s ease;
+  color: var(--mr-slate);
+}
+.mr-accordion__content ul { padding-left: 1.8rem; }
+.mr-accordion__content li { margin-bottom: 0.5rem; }
+
+/* ---- Cart drawer: free shipping progress ------------------------------ */
+.mr-shipping-bar {
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--mr-radius);
+  background: color-mix(in srgb, var(--mr-forest) 6%, var(--mr-cream));
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 15%, transparent);
+}
+.mr-shipping-bar__text {
+  margin: 0 0 0.8rem;
+  font-size: 1.3rem;
+  color: var(--mr-charcoal);
+}
+.mr-shipping-bar__text strong { color: var(--mr-forest); }
+.mr-shipping-bar__track {
+  height: 8px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--mr-forest) 14%, transparent);
+  overflow: hidden;
+}
+.mr-shipping-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--mr-forest), var(--mr-gold));
+  transition: width 0.6s var(--mr-ease);
+}
+.mr-shipping-bar--unlocked {
+  background: color-mix(in srgb, var(--mr-gold) 16%, var(--mr-cream));
+  border-color: color-mix(in srgb, var(--mr-gold) 60%, transparent);
+}
+.mr-shipping-bar--unlocked .mr-shipping-bar__fill {
+  background: var(--mr-gold);
+}
+
+/* ---- Multicolumn cards (trust bar + testimonials) --------------------- */
+.multicolumn .multicolumn-card {
+  background: var(--mr-cream);
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 10%, transparent);
+  border-radius: var(--mr-radius);
+  box-shadow: var(--mr-shadow-soft);
+  padding: 2.4rem 2rem;
+  height: 100%;
+  transition: transform 0.3s var(--mr-ease), box-shadow 0.3s var(--mr-ease);
+}
+.multicolumn .multicolumn-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mr-shadow-lift);
+}
+.multicolumn-card__info { padding: 0; }
+.multicolumn-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+/* Gold stars in testimonial headings */
+.multicolumn-card h3 { color: var(--mr-charcoal); }
+
+/* ---- Collection cards: hover overlay ---------------------------------- */
+.collection-list .card__inner {
+  border-radius: var(--mr-radius);
+  overflow: hidden;
+}
+.collection-list .card__media img {
+  transition: transform 0.8s var(--mr-ease);
+}
+.collection-list .card-wrapper:hover .card__media img {
+  transform: scale(1.08);
+}
+.collection-list .card__content {
+  transition: transform 0.3s var(--mr-ease);
+}
+.collection-list .card-wrapper:hover .card__content {
+  transform: translateY(-2px);
+}
+
+/* ---- Newsletter section: gold accent ---------------------------------- */
+.newsletter-form__field-wrapper .field__input {
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--mr-cream) 96%, transparent);
+}
+
+/* ---- Footer refinement ------------------------------------------------ */
+.footer__blocks-wrapper .footer-block__heading {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.footer a { transition: color 0.2s ease, opacity 0.2s ease; }
+.footer a:hover { color: var(--mr-gold); }
+
+/* ---- Scroll reveal enhancement (pairs with theme animations) ---------- */
+.scroll-trigger.animate--slide-in {
+  animation-timing-function: var(--mr-ease);
+}
+
+/* ---- Header polish ---------------------------------------------------- */
+.header-wrapper {
+  backdrop-filter: saturate(1.1);
+}
+.header__menu-item {
+  transition: color 0.2s ease;
+}
+.header__menu-item:hover {
+  color: var(--mr-forest);
+  text-decoration-color: var(--mr-gold);
+}
+
+/* ---- Reduced motion respect ------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .card__media img,
+  .product__media img,
+  .card-wrapper,
+  .button,
+  .mr-accordion__content,
+  .mr-shipping-bar__fill {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   MALABARROOTS — v2: Quick links, Proof cards, Pills, Policy pages, Track
+   ========================================================================== */
+
+/* ---- Quick links (circular icon row) ---------------------------------- */
+.mr-quick-links__list {
+  display: flex;
+  justify-content: center;
+  gap: 3.2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.4rem 0.4rem 1rem;
+  margin: 0;
+  list-style: none;
+}
+.mr-quick-links__list::-webkit-scrollbar { display: none; }
+.mr-quick-links__item { flex: 0 0 auto; }
+.mr-quick-links__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--mr-charcoal);
+}
+.mr-quick-links__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.8rem;
+  height: 8.8rem;
+  border-radius: 50%;
+  background: var(--mr-forest);
+  overflow: hidden;
+  transition: transform 0.3s var(--mr-ease), box-shadow 0.3s var(--mr-ease);
+}
+.mr-quick-links__circle--brown { background: #4a3620; }
+.mr-quick-links__link:hover .mr-quick-links__circle {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--mr-shadow-lift);
+}
+.mr-quick-links__emoji { font-size: 3.4rem; line-height: 1; }
+.mr-quick-links__img { width: 100%; height: 100%; object-fit: cover; }
+.mr-quick-links__label {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--mr-forest);
+}
+@media screen and (max-width: 749px) {
+  .mr-quick-links__list { justify-content: flex-start; gap: 2rem; }
+  .mr-quick-links__circle { width: 6.8rem; height: 6.8rem; }
+  .mr-quick-links__emoji { font-size: 2.6rem; }
+  .mr-quick-links__label { font-size: 1.2rem; }
+}
+
+/* ---- Proof cards ------------------------------------------------------- */
+.mr-proof__heading { text-align: center; margin: 0 0 3.6rem; }
+.mr-proof__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+.mr-proof__grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 90rem; margin: 0 auto; }
+.mr-proof__grid--4 { grid-template-columns: repeat(4, 1fr); }
+.mr-proof__card {
+  background: var(--mr-cream);
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 10%, transparent);
+  border-radius: 16px;
+  box-shadow: var(--mr-shadow-soft);
+  padding: 3.2rem 2.4rem;
+  text-align: center;
+  transition: transform 0.3s var(--mr-ease), box-shadow 0.3s var(--mr-ease);
+}
+.mr-proof__card:hover { transform: translateY(-5px); box-shadow: var(--mr-shadow-lift); }
+.mr-proof__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto 1.8rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--mr-forest) 9%, var(--mr-cream));
+  border: 2px solid color-mix(in srgb, var(--mr-forest) 22%, transparent);
+}
+.mr-proof__emoji { font-size: 3.8rem; line-height: 1; }
+.mr-proof__img { width: 70%; height: 70%; object-fit: contain; }
+.mr-proof__title { margin: 0 0 1rem; color: var(--mr-forest); }
+.mr-proof__text { color: var(--mr-slate); font-size: 1.4rem; }
+@media screen and (max-width: 989px) {
+  .mr-proof__grid, .mr-proof__grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 599px) {
+  .mr-proof__grid, .mr-proof__grid--2, .mr-proof__grid--4 { grid-template-columns: 1fr; }
+  .mr-proof__card { padding: 2.4rem 2rem; }
+}
+
+/* ---- Pill links -------------------------------------------------------- */
+.mr-pills__heading { margin: 0 0 2.4rem; }
+.mr-pills__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.mr-pills__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.1rem 2.6rem;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--mr-forest);
+  background: color-mix(in srgb, var(--mr-forest) 9%, var(--mr-cream));
+  border: 1.5px solid color-mix(in srgb, var(--mr-forest) 30%, transparent);
+  transition: all 0.25s var(--mr-ease);
+}
+.mr-pills__pill:hover,
+.mr-pills__pill--active {
+  background: var(--mr-forest);
+  color: var(--mr-cream);
+  border-color: var(--mr-forest);
+  transform: translateY(-2px);
+  box-shadow: var(--mr-shadow-soft);
+}
+@media screen and (max-width: 749px) {
+  .mr-pills__row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.8rem;
+  }
+  .mr-pills__row::-webkit-scrollbar { display: none; }
+  .mr-pills__pill { flex: 0 0 auto; }
+}
+
+/* ---- Policy pages & narrow content ------------------------------------- */
+.page-width--narrow { max-width: 82rem; margin: 0 auto; }
+.mr-policy__title { margin: 0 0 1.6rem; }
+.mr-policy__intro {
+  font-size: 1.7rem;
+  color: var(--mr-slate);
+  border-left: 3px solid var(--mr-gold);
+  padding-left: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+.mr-policy h2 {
+  margin: 3.2rem 0 1.2rem;
+  font-size: 2.2rem;
+  color: var(--mr-forest);
+}
+.mr-policy ul { padding-left: 2rem; margin: 0 0 2rem; }
+.mr-policy li { margin-bottom: 1rem; line-height: 1.7; color: var(--mr-slate); }
+.mr-policy a { color: var(--mr-forest); font-weight: 600; }
+.mr-policy__cta { margin-top: 3.2rem; }
+
+/* ---- Track order widget ------------------------------------------------ */
+.mr-track__card {
+  background: color-mix(in srgb, var(--mr-forest) 5%, var(--mr-cream));
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 14%, transparent);
+  border-radius: 16px;
+  box-shadow: var(--mr-shadow-soft);
+  padding: 3.2rem;
+  margin-top: 2.4rem;
+}
+.mr-track__fieldset { border: none; padding: 0; margin: 0 0 2rem; display: flex; gap: 2.4rem; flex-wrap: wrap; }
+.mr-track__legend { font-weight: 700; color: var(--mr-charcoal); margin-bottom: 1.2rem; }
+.mr-track__radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--mr-slate);
+}
+.mr-track__radio input { accent-color: var(--mr-forest); width: 1.8rem; height: 1.8rem; }
+.mr-track__input-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.mr-track__input {
+  flex: 1 1 26rem;
+  padding: 1.4rem 1.6rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--mr-forest) 30%, transparent);
+  background: var(--mr-cream);
+  font-size: 1.5rem;
+}
+.mr-track__input:focus { outline: 2px solid var(--mr-gold); outline-offset: 1px; }
+.mr-track__btn { flex: 0 0 auto; }
+.mr-track__hint { margin-top: 1.6rem; font-size: 1.3rem; color: var(--mr-slate); }
+@media screen and (max-width: 599px) {
+  .mr-track__card { padding: 2rem 1.6rem; }
+  .mr-track__btn { width: 100%; }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS PASS — layouts, tap targets, spacing
+   ========================================================================== */
+@media screen and (max-width: 749px) {
+  /* Hero: tighter, readable */
+  .banner__heading { font-size: clamp(2.6rem, 8vw, 3.6rem); }
+  .banner__buttons { flex-direction: column; width: 100%; gap: 1rem; }
+  .banner__buttons .button { width: 100%; max-width: 32rem; }
+
+  /* Section rhythm */
+  .section { scroll-margin-top: 7rem; }
+  .multicolumn .multicolumn-card { padding: 1.8rem 1.4rem; }
+  .multicolumn-card h3 { font-size: 1.4rem; }
+
+  /* Product cards: comfortable tap targets */
+  .quick-add .button { min-height: 4.4rem; }
+  .card__heading { font-size: 1.4rem; line-height: 1.35; }
+  .price { font-size: 1.5rem; }
+
+  /* PDP */
+  .mr-badges { gap: 0.6rem; }
+  .mr-badge { font-size: 1.1rem; padding: 0.45rem 1rem; }
+  .mr-accordion__summary { font-size: 1.4rem; padding: 1.3rem 0.2rem; }
+
+  /* Cart drawer full-width comfort */
+  .mr-shipping-bar { padding: 1rem 1.2rem; }
+  .mr-shipping-bar__text { font-size: 1.2rem; }
+
+  /* Footer stacking breathing room */
+  .footer__blocks-wrapper { row-gap: 2.8rem; }
+
+  /* Policy pages */
+  .mr-policy h2 { font-size: 1.9rem; }
+  .mr-policy__intro { font-size: 1.5rem; }
+}
+
+/* Tablet refinement */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .mr-quick-links__list { gap: 2.6rem; }
+  .multicolumn .multicolumn-card { padding: 2rem 1.8rem; }
+}
+
+/* Larger comfortable tap targets everywhere on touch */
+@media (pointer: coarse) {
+  .button, .quantity__button, .mr-pills__pill, .mr-track__btn {
+    min-height: 4.4rem;
+  }
+  .header__icon { min-width: 4.4rem; min-height: 4.4rem; }
+}
