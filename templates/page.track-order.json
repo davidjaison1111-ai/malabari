@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"mr-track page-width--narrow\">\n  <h1 class=\"mr-policy__title\">Track Your Order</h1>\n  <p class=\"mr-policy__intro\">Check the current status of your shipment.</p>\n  <div class=\"mr-track__card\">\n    <fieldset class=\"mr-track__fieldset\">\n      <legend class=\"mr-track__legend\">Search by:</legend>\n      <label class=\"mr-track__radio\">\n        <input type=\"radio\" name=\"mr-track-type\" value=\"tracking\" checked>\n        <span>Tracking ID</span>\n      </label>\n      <label class=\"mr-track__radio\">\n        <input type=\"radio\" name=\"mr-track-type\" value=\"order\">\n        <span>Order ID</span>\n      </label>\n    </fieldset>\n    <div class=\"mr-track__input-row\">\n      <input\n        type=\"text\"\n        id=\"mr-track-input\"\n        class=\"mr-track__input field__input\"\n        placeholder=\"Enter your Tracking ID\"\n        autocomplete=\"off\"\n      >\n      <button type=\"button\" class=\"button mr-track__btn\" id=\"mr-track-btn\">Track Order</button>\n    </div>\n    <p class=\"mr-track__hint\" id=\"mr-track-hint\">\n      Your Tracking ID (AWB number) is in your dispatch email. Having trouble?\n      Email <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a> with your order number.\n    </p>\n  </div>\n</div>\n<script>\n  (function () {\n    var input = document.getElementById('mr-track-input');\n    var btn = document.getElementById('mr-track-btn');\n    var radios = document.querySelectorAll('input[name=\"mr-track-type\"]');\n    var mode = 'tracking';\n    radios.forEach(function (r) {\n      r.addEventListener('change', function () {\n        mode = this.value;\n        input.placeholder = mode === 'tracking' ? 'Enter your Tracking ID' : 'Enter your Order ID (e.g. #1001)';\n      });\n    });\n    function go() {\n      var v = input.value.trim();\n      if (!v) { input.focus(); return; }\n      if (mode === 'tracking') {\n        window.open('https://shiprocket.co/tracking/' + encodeURIComponent(v), '_blank', 'noopener');\n      } else {\n        window.location.href = '/account';\n      }\n    }\n    btn.addEventListener('click', go);\n    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });\n  })();\n</script>",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

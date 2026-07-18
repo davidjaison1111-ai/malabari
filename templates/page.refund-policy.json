@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"mr-policy page-width--narrow\">\n  <h1 class=\"mr-policy__title\">Refund Policy</h1>\n  <p class=\"mr-policy__intro\">Once an order is confirmed, MalabarRoots will not accept return or refund requests. However, in any of the situations below, we are more than happy to work with our patrons to find an amicable solution that is fair to all parties.</p>\n\n  <h2>In case of a damaged product</h2>\n  <ul>\n    <li>We will be happy to re-send and replace the product; replacement takes 7 to 10 days. MalabarRoots must be notified of a damaged product within <strong>2 days from the delivery date</strong> via email to <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a>.</li>\n    <li>In the email, please include your order number, an image of the invoice, 1 outer-box image, 2 clear images of the product, and an unboxing video of the damaged item.</li>\n    <li>In case of multiple-item shipments, only the affected product can be returned and replaced.</li>\n    <li>We will promptly re-send and replace the product(s) and work with you on an amicable solution.</li>\n    <li>Emails are responded to within 24&ndash;48 hours and full assistance will be provided thereafter.</li>\n  </ul>\n\n  <h2>In case of a missing product</h2>\n  <ul>\n    <li>MalabarRoots must be notified of a missing product within <strong>2 days from the delivery date</strong> via email to <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a>.</li>\n    <li>In the email, please include your order number, an image of the invoice, 1 outer-box image, 2 clear images of the opened box, and an unboxing video showing all items received.</li>\n    <li>We are unable to accept a refund request, but we will be happy to promptly re-send the missing product.</li>\n    <li>Emails are responded to within 24&ndash;48 hours and full assistance will be provided thereafter.</li>\n  </ul>\n\n  <h2>In case of a spoiled product</h2>\n  <ul>\n    <li>MalabarRoots must be notified of spoilage within <strong>2 days from the delivery date</strong> via email to <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a>.</li>\n    <li>In the email, please share your order number, the date of packaging / manufacture, and clear images or a video of the product.</li>\n    <li>We are unable to accept returns due to variance in taste, texture, colour or aroma. Our products are completely natural and made mostly by hand, so no two batches will be identical. No compromise is made in the natural production process or the use of the best natural ingredients, and we ensure maximum nutritional value is retained.</li>\n    <li>The product will be replaced after due investigation and diligence &mdash; we assure a fair outcome at all times.</li>\n    <li>Emails are responded to within 24&ndash;48 hours and full assistance will be provided thereafter.</li>\n  </ul>\n</div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

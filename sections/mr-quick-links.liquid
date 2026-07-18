@@ -1,0 +1,117 @@
+{{ 'malabarroots-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="mr-quick-links color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <ul class="mr-quick-links__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="mr-quick-links__item" {{ block.shopify_attributes }}>
+          <a
+            href="{{ block.settings.link | default: '#' }}"
+            class="mr-quick-links__link"
+            aria-label="{{ block.settings.label | escape }}"
+          >
+            <span class="mr-quick-links__circle{% cycle ' mr-quick-links__circle--forest', ' mr-quick-links__circle--brown' %}">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 160 | image_tag: loading: 'lazy', class: 'mr-quick-links__img', widths: '80, 160' }}
+              {%- else -%}
+                <span class="mr-quick-links__emoji" aria-hidden="true">{{ block.settings.icon }}</span>
+              {%- endif -%}
+            </span>
+            <span class="mr-quick-links__label">{{ block.settings.label }}</span>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "MR Quick links",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quick_link",
+      "name": "Quick link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji icon (used when no image)",
+          "default": "🌿"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "All Products"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "MR Quick links",
+      "blocks": [
+        { "type": "quick_link", "settings": { "icon": "🎁", "label": "Combo Deals" } },
+        { "type": "quick_link", "settings": { "icon": "✨", "label": "New Launches" } },
+        { "type": "quick_link", "settings": { "icon": "🧺", "label": "All Products" } },
+        { "type": "quick_link", "settings": { "icon": "🏷️", "label": "Under ₹499" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,586 @@
+{
+  "sections": {
+    "mr_hero": {
+      "type": "image-banner",
+      "blocks": {
+        "hero_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The True Aroma of Kerala, Delivered.",
+            "heading_size": "h0"
+          }
+        },
+        "hero_text": {
+          "type": "text",
+          "settings": {
+            "text": "Whole spices, Ayurvedic oils & estate coffee — sourced directly from the soil of Idukki to your kitchen.",
+            "text_style": "body"
+          }
+        },
+        "hero_buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop the 8-in-1 Heritage Combo",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Our Story",
+            "button_link_2": "shopify://pages/about-us",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "hero_heading",
+        "hero_text",
+        "hero_buttons"
+      ],
+      "settings": {
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "mr_trust_bar": {
+      "type": "multicolumn",
+      "blocks": {
+        "trust_1": {
+          "type": "column",
+          "settings": {
+            "title": "🌿 100% Whole Spices",
+            "text": "<p>Never pre-ground. Whole spices lock in essential oils and aroma.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "trust_2": {
+          "type": "column",
+          "settings": {
+            "title": "🚜 Direct from Kerala Farms",
+            "text": "<p>Sourced from 36+ partner farmers in Idukki — no middlemen.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "trust_3": {
+          "type": "column",
+          "settings": {
+            "title": "📦 Freshly Packed",
+            "text": "<p>Small batches, packed to order for peak freshness.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "trust_4": {
+          "type": "column",
+          "settings": {
+            "title": "🚚 Free Shipping over ₹999",
+            "text": "<p>Fast, tracked delivery across India on qualifying orders.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "mr_categories": {
+      "type": "collection-list",
+      "blocks": {
+        "cat_spices": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "spices"
+          }
+        },
+        "cat_ayurveda": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ayurveda"
+          }
+        },
+        "cat_coffee_tea": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "coffee-tea"
+          }
+        },
+        "cat_snacks": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "snacks-sweets"
+          }
+        }
+      },
+      "block_order": [
+        "cat_spices",
+        "cat_ayurveda",
+        "cat_coffee_tea",
+        "cat_snacks"
+      ],
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
+    },
+    "mr_spotlight": {
+      "type": "featured-product",
+      "blocks": {
+        "sp_caption": {
+          "type": "text",
+          "settings": {
+            "text": "❖ BESTSELLER — THE HERITAGE PICK",
+            "text_style": "uppercase"
+          }
+        },
+        "sp_title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "sp_rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "sp_price": {
+          "type": "price",
+          "settings": {}
+        },
+        "sp_checklist": {
+          "type": "text",
+          "settings": {
+            "text": "✓ Pepper &nbsp;✓ Cardamom &nbsp;✓ Cinnamon &nbsp;✓ Cloves &nbsp;✓ Nutmeg &nbsp;✓ Star Anise &nbsp;✓ Turmeric &nbsp;✓ Dry Ginger",
+            "text_style": "body"
+          }
+        },
+        "sp_qty": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "sp_buy": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "sp_caption",
+        "sp_title",
+        "sp_rating",
+        "sp_price",
+        "sp_checklist",
+        "sp_qty",
+        "sp_buy"
+      ],
+      "settings": {
+        "product": "unprocessed-forest-honey-idukki-500ml",
+        "color_scheme": "scheme-3",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "mr_bestsellers": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Pantry Heroes, Straight from the Source",
+        "heading_size": "h1",
+        "description": "Handpicked, small-batch and packed fresh — the everyday essentials our community re-orders most.",
+        "show_description": true,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "mr_story": {
+      "type": "image-with-text",
+      "blocks": {
+        "story_caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "FROM IDUKKI, WITH LOVE",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "story_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rooted in a Sunday Market",
+            "heading_size": "h1"
+          }
+        },
+        "story_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>While travelling rural India, our founder David wandered into a farmers' Sunday market in Upputhara, Idukki — and watched generations of craft go home unsold. He stayed, listened, and in 2022 built MalabarRoots with his father: a direct bridge between 36 Kerala farmers and kitchens that value the real thing. Every jar and pack you buy sends fair value straight back to the soil it came from.</p>",
+            "text_style": "body"
+          }
+        },
+        "story_button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read Our Full Story",
+            "button_link": "shopify://pages/about-us",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "story_caption",
+        "story_heading",
+        "story_text",
+        "story_button"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "mr_reviews": {
+      "type": "multicolumn",
+      "blocks": {
+        "rev_1": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★ “Excellent quality spices!”",
+            "text": "<p>The aroma of the cardamom and pepper is unmatched. The combo box is a must-have for any home cook.</p><p><strong>— Priya, Mumbai</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "rev_2": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★ “Fresh and authentic”",
+            "text": "<p>I love the freshness of these spices. They make my dishes taste so much better than store-bought powders.</p><p><strong>— Anil, Bangalore</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "rev_3": {
+          "type": "column",
+          "settings": {
+            "title": "★★★★★ “Great value”",
+            "text": "<p>The combo box is very well priced for the quality. I will definitely be ordering again.</p><p><strong>— Aisha, Dubai</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3"
+      ],
+      "settings": {
+        "title": "What Our Community Says",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "mr_newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "nl_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the Malabar Community",
+            "heading_size": "h1"
+          }
+        },
+        "nl_text": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get Kerala recipes, harvest updates and members-only offers — straight to your inbox.</p>"
+          }
+        },
+        "nl_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "nl_heading",
+        "nl_text",
+        "nl_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "mr_quick_links": {
+      "type": "mr-quick-links",
+      "blocks": {
+        "ql_combo": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "🎁",
+            "label": "Combo Deals",
+            "link": "shopify://collections/all"
+          }
+        },
+        "ql_new": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "✨",
+            "label": "New Launches",
+            "link": "shopify://collections/all"
+          }
+        },
+        "ql_spices": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "🌶️",
+            "label": "Whole Spices",
+            "link": "shopify://collections/spices"
+          }
+        },
+        "ql_ayur": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "🪔",
+            "label": "Ayurveda",
+            "link": "shopify://collections/ayurveda"
+          }
+        },
+        "ql_coffee": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "☕",
+            "label": "Coffee & Tea",
+            "link": "shopify://collections/coffee-tea"
+          }
+        },
+        "ql_all": {
+          "type": "quick_link",
+          "settings": {
+            "icon": "🧺",
+            "label": "All Products",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "ql_combo",
+        "ql_new",
+        "ql_spices",
+        "ql_ayur",
+        "ql_coffee",
+        "ql_all"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 16
+      }
+    },
+    "mr_proof": {
+      "type": "mr-proof-cards",
+      "blocks": {
+        "pf_batch": {
+          "type": "proof_card",
+          "settings": {
+            "icon": "🔬",
+            "title": "Small-Batch, Fresh-Packed",
+            "text": "<p>Every batch is packed to order and checked for aroma, moisture and purity before it ships.</p>"
+          }
+        },
+        "pf_farmer": {
+          "type": "proof_card",
+          "settings": {
+            "icon": "🤝",
+            "title": "Direct Farmer Trade",
+            "text": "<p>Sourced straight from 36+ partner farmers in Idukki — fair value goes back to the soil, not middlemen.</p>"
+          }
+        },
+        "pf_natural": {
+          "type": "proof_card",
+          "settings": {
+            "icon": "🌱",
+            "title": "100% Natural &amp; Whole",
+            "text": "<p>No blends, no fillers, no artificial colours or flavours. Whole spices keep their essential oils intact.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "pf_batch",
+        "pf_farmer",
+        "pf_natural"
+      ],
+      "settings": {
+        "title": "Good Food, Backed by Proof",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "mr_pills": {
+      "type": "mr-pill-links",
+      "blocks": {
+        "pl_chai": {
+          "type": "pill",
+          "settings": {
+            "label": "Everyday Chai",
+            "link": "shopify://collections/spices"
+          }
+        },
+        "pl_biryani": {
+          "type": "pill",
+          "settings": {
+            "label": "Biryani & Curries",
+            "link": "shopify://collections/spices"
+          }
+        },
+        "pl_wellness": {
+          "type": "pill",
+          "settings": {
+            "label": "Ayurvedic Wellness",
+            "link": "shopify://collections/ayurveda"
+          }
+        },
+        "pl_brew": {
+          "type": "pill",
+          "settings": {
+            "label": "Slow Brews",
+            "link": "shopify://collections/coffee-tea"
+          }
+        },
+        "pl_gift": {
+          "type": "pill",
+          "settings": {
+            "label": "Gifting",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "pl_chai",
+        "pl_biryani",
+        "pl_wellness",
+        "pl_brew",
+        "pl_gift"
+      ],
+      "settings": {
+        "title": "Shop by Kitchen Moment",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 8
+      }
+    },
+    "mr_video": {
+      "type": "video",
+      "settings": {
+        "heading": "From the Soil of Idukki",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "",
+        "description": "Meet the farming families of Upputhara behind every MalabarRoots pack.",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "mr_hero",
+    "mr_quick_links",
+    "mr_trust_bar",
+    "mr_categories",
+    "mr_pills",
+    "mr_spotlight",
+    "mr_bestsellers",
+    "mr_proof",
+    "mr_story",
+    "mr_video",
+    "mr_reviews",
+    "mr_newsletter"
+  ]
+}

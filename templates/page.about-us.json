@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "hero": {
+      "type": "rich-text",
+      "blocks": {
+        "cap": {
+          "type": "caption",
+          "settings": {
+            "caption": "OUR STORY",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "head": {
+          "type": "heading",
+          "settings": {
+            "heading": "From the Fresh Roots of India",
+            "heading_size": "h0"
+          }
+        },
+        "txt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The world around us is losing the true taste of agro-products. We exist to deliver the finest taste — straight from the fresh roots of India.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "cap",
+        "head",
+        "txt"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "story": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"mr-policy page-width--narrow\">\n  <h2>How MalabarRoots began</h2>\n  <p>While travelling rural India on a break from Dubai, our founder <strong>David</strong> found himself at a farmers' Sunday market in <strong>Upputhara, Idukki, Kerala</strong>. Stall after stall of generations-old craft — pepper, cardamom, honey, coffee — was going home unsold. He stayed on, spent days with the farmers, listened to their stories, and returned with one conviction: these harvests deserved a direct road to kitchens that value the real thing.</p>\n  <p>In <strong>2022</strong>, David and his father built MalabarRoots — a direct bridge between Kerala's farming families and homes across the world.</p>\n\n  <h2>What we do</h2>\n  <p>MalabarRoots specialises in premium Kerala produce: <strong>Arabica and Robusta coffee, black pepper, cardamom, cinnamon, cloves, turmeric</strong>, Ayurvedic oils, forest honey and more — sourced directly from farmers who have cultivated them for generations. Every product is carefully selected and freshly packed in small batches to lock in aroma, flavour and quality. We serve home kitchens as well as bulk buyers — coffee roasters, spice wholesalers and food manufacturers — with competitive pricing and timely delivery worldwide.</p>\n\n  <h2>Our mission</h2>\n  <p>To empower small and medium farmers, ensuring they receive fair rates for their crops and the respect they deserve. Every product — a fragrant spice, sweet honey, estate coffee — is a testament to the craftsmanship these farmers pour into their work. When you choose MalabarRoots, you're not just purchasing food; you're joining a narrative that uplifts families and strengthens communities.</p>\n\n  <h2>Our vision</h2>\n  <p>As we expand our reach, we aim to create a sustainable ecosystem that honours our agricultural heritage and nurtures the spirit of small farmers — enabling them to thrive and share their rich cultural traditions with the world.</p>\n\n  <p>Thank you for choosing MalabarRoots as your trusted partner. We look forward to serving you the true taste of Kerala. Reach us anytime at <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a>.</p>\n</div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "story"
+  ]
+}

@@ -1,0 +1,136 @@
+{{ 'malabarroots-custom.css' | asset_url | stylesheet_tag }}
+
+<div class="mr-proof color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="mr-proof__heading {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    <div class="mr-proof__grid mr-proof__grid--{{ section.blocks.size }}">
+      {%- for block in section.blocks -%}
+        <div class="mr-proof__card scroll-trigger animate--slide-in" {{ block.shopify_attributes }}>
+          <div class="mr-proof__icon-wrap">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 320 | image_tag: loading: 'lazy', class: 'mr-proof__img', widths: '160, 320' }}
+            {%- else -%}
+              <span class="mr-proof__emoji" aria-hidden="true">{{ block.settings.icon }}</span>
+            {%- endif -%}
+          </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="mr-proof__title h4">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="mr-proof__text rte">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "MR Proof cards",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Good Food, Backed by Proof"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" },
+        { "value": "h0", "label": "Extra large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "proof_card",
+      "name": "Proof card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji icon (used when no image)",
+          "default": "🔬"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Badge image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lab-Tested Purity"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Every batch is checked for freshness, aroma and purity before it is packed.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "MR Proof cards",
+      "blocks": [
+        { "type": "proof_card" },
+        { "type": "proof_card", "settings": { "icon": "🤝", "title": "Direct Farmer Trade" } },
+        { "type": "proof_card", "settings": { "icon": "🌱", "title": "100% Natural" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

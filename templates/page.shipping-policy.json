@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"mr-policy page-width--narrow\">\n  <h1 class=\"mr-policy__title\">Shipping &amp; Delivery Policy</h1>\n  <p class=\"mr-policy__intro\">Please note that the free shipping policy will apply only if specified as part of promotional campaigns or special offers.</p>\n  <h2>Our shipping policies</h2>\n  <ul>\n    <li>A complete postal address including PIN code, email ID and contact number is essential to help us ship your order. Kindly cross-check your PIN code and contact number before you complete your order.</li>\n    <li>If the ordered item is in stock, it will be packed and dispatched from our warehouse within <strong>3 working days</strong>.</li>\n    <li>If some of the ordered items are not in stock, we will get them freshly produced and dispatched within <strong>10 working days</strong> of the order being placed. We will keep you informed under such circumstances.</li>\n    <li>Our courier partners deliver <strong>Monday to Saturday, 9am&ndash;7pm</strong>. Working days exclude public holidays and Sundays. Delivery time is subject to factors beyond our control, including unexpected transit delays from courier partners and transporters due to weather conditions or strikes.</li>\n    <li>As soon as your package is dispatched, we will email you your order tracking details. Kindly bear with us until then.</li>\n  </ul>\n  <p>For any further clarifications, please contact us at <a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a>.</p>\n  <p class=\"mr-policy__cta\"><a class=\"button\" href=\"/pages/track-order\">Track Your Order</a></p>\n</div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
