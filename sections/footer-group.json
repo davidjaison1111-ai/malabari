@@ -11,7 +11,7 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "malabar_footer_kTJb9U": {
+    "malabar_footer_4ybPAr": {
       "type": "malabar-footer",
       "name": "Malabar Footer",
       "settings": {
@@ -63,7 +63,7 @@
     }
   },
   "order": [
-    "malabar_footer_kTJb9U",
+    "malabar_footer_4ybPAr",
     "footer"
   ]
 }
