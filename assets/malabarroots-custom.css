@@ -19,7 +19,7 @@
   --mr-honey: #d89a4c;
   --mr-honey-soft: #e7c079;
   
-  /* Backgrounds */
+  /* Backgrounds - using ivory consistently instead of cream */
   --mr-ivory: #fdfbf7;
   --mr-ivory-2: #f6f3ea;
   --mr-ivory-3: #efebde;
@@ -33,6 +33,9 @@
   /* UI */
   --mr-line: #e4dfd1;
   --mr-line-strong: #d6cfbb;
+  
+  /* Legacy cream alias for backward compatibility */
+  --mr-cream: var(--mr-ivory);
   
   /* Effects */
   --mr-radius: 18px;
