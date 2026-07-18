@@ -1,3 +1,32 @@
 ```
-*.backup
+# Build artifacts
+dist/
+build/
+*.min.css
+*.min.js
+*.bundle.js
+*.css.map
+*.js.map
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
 ```

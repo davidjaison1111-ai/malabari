@@ -1,25 +1,231 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "hero": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "GET IN TOUCH",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "We'd Love to Hear From You",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Have a question about our products, orders, or anything else? Our team is here to help you with everything you need.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
       "settings": {
-        "padding_top": 20,
-        "padding_bottom": 0
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "form": {
+    "contact-info": {
+      "type": "multicolumn",
+      "blocks": {
+        "email": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "icon": "email",
+            "title": "Email Us",
+            "text": "<p>For general inquiries and support</p><p><a href=\"mailto:hello@malabarroots.com\">hello@malabarroots.com</a></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "phone": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "icon": "phone",
+            "title": "Call Us",
+            "text": "<p>Mon-Fri from 9am to 6pm IST</p><p><a href=\"tel:+911234567890\">+91 123 456 7890</a></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "location": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "icon": "location",
+            "title": "Visit Us",
+            "text": "<p>Kerala, India</p><p>Serving customers worldwide</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "social": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "icon": "share",
+            "title": "Follow Us",
+            "text": "<p>Connect on social media</p><p>@malabarroots</p>",
+            "button_label": "Follow",
+            "button_link": "https://instagram.com/malabarroots"
+          }
+        }
+      },
+      "block_order": [
+        "email",
+        "phone",
+        "location",
+        "social"
+      ],
+      "settings": {
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "column_alignment": "center",
+        "background_style": "secondary",
+        "button_style": "outline",
+        "color_scheme": "scheme-2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "inquiry-options": {
+      "type": "collapsible-content",
+      "blocks": {
+        "wholesale": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wholesale & Bulk Orders",
+            "row_content": "<p>Interested in purchasing our products in bulk? We offer special pricing for coffee roasters, spice wholesalers, and food manufacturers. Contact our B2B team for custom quotes and samples.</p><p><a href=\"/pages/wholesale\">Learn more about wholesale →</a></p>",
+            "icon": "box"
+          }
+        },
+        "shipping": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shipping & Delivery",
+            "row_content": "<p>We ship worldwide with care. Domestic orders within India are delivered in 3-5 business days. International shipping takes 7-14 business days depending on location.</p><p><a href=\"/pages/shipping-policy\">View shipping policy →</a></p>",
+            "icon": "truck"
+          }
+        },
+        "returns": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Returns & Refunds",
+            "row_content": "<p>Not satisfied with your purchase? We offer hassle-free returns within 30 days of delivery. Your satisfaction is our priority.</p><p><a href=\"/pages/refund-policy\">View return policy →</a></p>",
+            "icon": "return"
+          }
+        },
+        "product": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Product Information",
+            "row_content": "<p>Want to know more about our sourcing, processing, or product specifications? Our team can provide detailed information about origin, certifications, and quality standards.</p>",
+            "icon": "info"
+          }
+        }
+      },
+      "block_order": [
+        "wholesale",
+        "shipping",
+        "returns",
+        "product"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "form-section": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Send Us a Message",
+        "heading_size": "h2",
         "color_scheme": "scheme-1",
-        "padding_top": 0,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 80
       }
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "OUR PROMISE",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fresh From the Roots of India",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At MalabarRoots, we believe in transparency, quality, and fair trade. Every product is sourced directly from farmers in Kerala, ensuring authentic taste and fair compensation.</p><p>When you reach out to us, you're not just contacting a brand – you're connecting with a mission to bring the true taste of India to the world while supporting farming communities.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Story",
+            "button_link": "/pages/about-us",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text",
+        "button"
+      ]
     }
   },
   "order": [
-    "main",
-    "form"
+    "hero",
+    "contact-info",
+    "inquiry-options",
+    "form-section",
+    "story"
   ]
 }
