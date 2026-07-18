@@ -1,0 +1,830 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .footer-malabar {
+    background: var(--color-background);
+    color: var(--color-text);
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    margin-top: 60px;
+  }
+
+  .footer-reviews-section {
+    background: linear-gradient(135deg, rgba(var(--color-foreground), 0.03) 0%, rgba(var(--color-foreground), 0.06) 100%);
+    padding: 60px 0;
+  }
+
+  .footer-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .footer-review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .footer-review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .footer-review-stars {
+    color: #FFB800;
+    font-size: 18px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .footer-review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .footer-review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .footer-review-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .footer-review-info p {
+    font-size: 12px;
+    color: rgba(var(--color-foreground), 0.6);
+    margin: 2px 0 0 0;
+  }
+
+  .footer-review-tag {
+    display: inline-block;
+    background: rgba(var(--color-foreground), 0.08);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 8px;
+    color: var(--color-text);
+  }
+
+  .footer-reviews-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+
+  .footer-reviews-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--color-text);
+  }
+
+  .footer-reviews-header p {
+    font-size: 16px;
+    color: rgba(var(--color-foreground), 0.7);
+    margin: 0;
+  }
+
+  .footer-overall-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .footer-rating-big {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .footer-rating-stars {
+    color: #FFB800;
+    font-size: 24px;
+  }
+
+  .footer-rating-count {
+    font-size: 14px;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+
+  .footer-main-section {
+    padding: 70px 0 50px;
+  }
+
+  .footer-main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .footer-brand-column h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: var(--color-text);
+  }
+
+  .footer-brand-column p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(var(--color-foreground), 0.7);
+    margin: 0 0 20px;
+  }
+
+  .footer-social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .footer-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .footer-social-link:hover {
+    background: var(--color-text);
+    color: var(--color-background);
+    transform: translateY(-2px);
+  }
+
+  .footer-column h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column li {
+    margin-bottom: 12px;
+  }
+
+  .footer-column a {
+    color: rgba(var(--color-foreground), 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-column a:hover {
+    color: var(--color-text);
+  }
+
+  .footer-newsletter-column {
+    background: linear-gradient(135deg, rgba(var(--color-foreground), 0.05) 0%, rgba(var(--color-foreground), 0.08) 100%);
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  .footer-newsletter-column h4 {
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  .footer-newsletter-column p {
+    font-size: 13px;
+    color: rgba(var(--color-foreground), 0.7);
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  .footer-newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-newsletter-input {
+    padding: 14px 18px;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    color: var(--color-text);
+    transition: border-color 0.3s ease;
+  }
+
+  .footer-newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+  }
+
+  .footer-newsletter-button {
+    padding: 14px 24px;
+    background: var(--color-text);
+    color: var(--color-background);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-newsletter-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .footer-newsletter-note {
+    font-size: 11px;
+    color: rgba(var(--color-foreground), 0.5);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+    padding: 30px 0;
+    margin-top: 40px;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+    color: rgba(var(--color-foreground), 0.6);
+  }
+
+  .footer-copyright a {
+    color: rgba(var(--color-foreground), 0.7);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-copyright a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-policies {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-policies a {
+    font-size: 13px;
+    color: rgba(var(--color-foreground), 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-policies a:hover {
+    color: var(--color-text);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer-main-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .footer-brand-column {
+      grid-column: span 2;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-reviews-section {
+      padding: 40px 0;
+    }
+
+    .footer-reviews-header h2 {
+      font-size: 22px;
+    }
+
+    .footer-rating-big {
+      font-size: 36px;
+    }
+
+    .footer-main-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .footer-brand-column {
+      grid-column: span 1;
+    }
+
+    .footer-newsletter-column {
+      order: -1;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-policies {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .footer-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-review-card {
+      padding: 20px;
+    }
+
+    .footer-overall-rating {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="footer-malabar">
+  <!-- Reviews Section -->
+  <section class="footer-reviews-section">
+    <div class="footer-reviews-header">
+      <h2>From Our Customers</h2>
+      <p>Trusted by spice lovers worldwide</p>
+      <div class="footer-overall-rating">
+        <span class="footer-rating-big">4.9</span>
+        <div>
+          <div class="footer-rating-stars">★★★★★</div>
+          <p class="footer-rating-count">from 2,400+ reviews</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-reviews-grid">
+      {%- assign review_1 = section.settings.review_1_text -%}
+      {%- assign review_2 = section.settings.review_2_text -%}
+      {%- assign review_3 = section.settings.review_3_text -%}
+      {%- assign review_4 = section.settings.review_4_text -%}
+      {%- assign review_5 = section.settings.review_5_text -%}
+      {%- assign review_6 = section.settings.review_6_text -%}
+
+      {%- if review_1 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_1 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_1_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_1_name }}</h4>
+              <p>{{ section.settings.review_1_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_1_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_1_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if review_2 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_2 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_2_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_2_name }}</h4>
+              <p>{{ section.settings.review_2_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_2_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_2_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if review_3 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_3 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_3_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_3_name }}</h4>
+              <p>{{ section.settings.review_3_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_3_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_3_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if review_4 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_4 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_4_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_4_name }}</h4>
+              <p>{{ section.settings.review_4_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_4_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_4_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if review_5 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_5 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_5_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_5_name }}</h4>
+              <p>{{ section.settings.review_5_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_5_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_5_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if review_6 != blank -%}
+        <div class="footer-review-card">
+          <div class="footer-review-stars">★★★★★</div>
+          <p class="footer-review-text">{{ review_6 }}</p>
+          <div class="footer-review-author">
+            <div class="footer-review-avatar">{{ section.settings.review_6_name | slice: 0 }}</div>
+            <div class="footer-review-info">
+              <h4>{{ section.settings.review_6_name }}</h4>
+              <p>{{ section.settings.review_6_location }}</p>
+            </div>
+          </div>
+          {%- if section.settings.review_6_tag != blank -%}
+            <span class="footer-review-tag">{{ section.settings.review_6_tag }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- Main Footer Section -->
+  <section class="footer-main-section">
+    <div class="footer-main-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand-column">
+        <h3>Malabar Roots</h3>
+        <p>Discover authentic Indian spices, curated stories, and unforgettable flavors from the heart of Kerala. Every spice tells a story of tradition, quality, and heritage.</p>
+        
+        <div class="footer-social-links">
+          {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" class="footer-social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+            <a href="{{ settings.social_instagram_link }}" class="footer-social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_youtube_link != blank -%}
+            <a href="{{ settings.social_youtube_link }}" class="footer-social-link" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_tiktok_link != blank -%}
+            <a href="{{ settings.social_tiktok_link }}" class="footer-social-link" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Shop Column -->
+      <div class="footer-column">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="/collections/all">All Spices</a></li>
+          <li><a href="/collections/cardamom">Cardamom</a></li>
+          <li><a href="/collections/pepper">Black Pepper</a></li>
+          <li><a href="/collections/cinnamon">Cinnamon</a></li>
+          <li><a href="/collections/cloves">Cloves</a></li>
+          <li><a href="/collections/nutmeg">Nutmeg & Mace</a></li>
+          <li><a href="/collections/turmeric">Turmeric</a></li>
+          <li><a href="/collections/spice-blends">Spice Blends</a></li>
+          <li><a href="/collections/gift-boxes">Gift Boxes</a></li>
+        </ul>
+      </div>
+
+      <!-- About Column -->
+      <div class="footer-column">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/pages/our-story">Our Story</a></li>
+          <li><a href="/pages/sourcing">Sourcing</a></li>
+          <li><a href="/pages/sustainability">Sustainability</a></li>
+          <li><a href="/pages/farmers">Our Farmers</a></li>
+          <li><a href="/pages/quality">Quality Promise</a></li>
+          <li><a href="/blogs/journal">Journal</a></li>
+          <li><a href="/pages/recipes">Recipes</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Column -->
+      <div class="footer-newsletter-column">
+        <h4>Weekly Spice Inspiration</h4>
+        <p>Join 50,000+ spice enthusiasts. Every Thursday: one recipe, two cooking tips, and exclusive offers. No spam — ever.</p>
+        
+        {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="footer-newsletter-form">
+            <input
+              type="email"
+              name="contact[email]"
+              class="footer-newsletter-input"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              placeholder="Your email address"
+              required
+            >
+            <button type="submit" class="footer-newsletter-button" name="commit" id="Subscribe">
+              Subscribe Free
+            </button>
+          </div>
+          <p class="footer-newsletter-note">Your data is safe. Unsubscribe with one click, anytime.</p>
+        {%- endform -%}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <div class="footer-copyright">
+        <small>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}. All rights reserved.</small>
+      </div>
+      
+      <div class="footer-policies">
+        {%- for policy in shop.policies -%}
+          {%- if policy != blank -%}
+            <a href="{{ policy.url }}">{{ policy.title }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Malabar Footer",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Customer Reviews"
+    },
+    {
+      "type": "paragraph",
+      "content": "Add your Google Business reviews here. Update the customer names, locations, and review text."
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review 1 Text",
+      "default": "The cardamom I received was absolutely premium quality. The aroma filled my entire kitchen when I opened the package!"
+    },
+    {
+      "type": "text",
+      "id": "review_1_name",
+      "label": "Review 1 Customer Name",
+      "default": "Priya S."
+    },
+    {
+      "type": "text",
+      "id": "review_1_location",
+      "label": "Review 1 Location",
+      "default": "Dubai, UAE"
+    },
+    {
+      "type": "text",
+      "id": "review_1_tag",
+      "label": "Review 1 Product Tag",
+      "default": "Green Cardamom"
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review 2 Text",
+      "default": "Best black pepper I've ever used. The freshness and pungency are unmatched. Will definitely order again!"
+    },
+    {
+      "type": "text",
+      "id": "review_2_name",
+      "label": "Review 2 Customer Name",
+      "default": "Rajesh M."
+    },
+    {
+      "type": "text",
+      "id": "review_2_location",
+      "label": "Review 2 Location",
+      "default": "Mumbai, India"
+    },
+    {
+      "type": "text",
+      "id": "review_2_tag",
+      "label": "Review 2 Product Tag",
+      "default": "Black Pepper"
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review 3 Text",
+      "default": "The cinnamon sticks are so fragrant and fresh. Perfect for my holiday baking. Packaging was beautiful too!"
+    },
+    {
+      "type": "text",
+      "id": "review_3_name",
+      "label": "Review 3 Customer Name",
+      "default": "Emily R."
+    },
+    {
+      "type": "text",
+      "id": "review_3_location",
+      "label": "Review 3 Location",
+      "default": "London, UK"
+    },
+    {
+      "type": "text",
+      "id": "review_3_tag",
+      "label": "Review 3 Product Tag",
+      "default": "Ceylon Cinnamon"
+    },
+    {
+      "type": "textarea",
+      "id": "review_4_text",
+      "label": "Review 4 Text",
+      "default": "Amazing quality cloves! The aroma is incredible and they last so long. Great value for premium spices."
+    },
+    {
+      "type": "text",
+      "id": "review_4_name",
+      "label": "Review 4 Customer Name",
+      "default": "Ahmed K."
+    },
+    {
+      "type": "text",
+      "id": "review_4_location",
+      "label": "Review 4 Location",
+      "default": "Singapore"
+    },
+    {
+      "type": "text",
+      "id": "review_4_tag",
+      "label": "Review 4 Product Tag",
+      "default": "Cloves"
+    },
+    {
+      "type": "textarea",
+      "id": "review_5_text",
+      "label": "Review 5 Text",
+      "default": "The turmeric powder has such a vibrant color and earthy flavor. You can tell it's pure and high quality."
+    },
+    {
+      "type": "text",
+      "id": "review_5_name",
+      "label": "Review 5 Customer Name",
+      "default": "Sarah J."
+    },
+    {
+      "type": "text",
+      "id": "review_5_location",
+      "label": "Review 5 Location",
+      "default": "Toronto, Canada"
+    },
+    {
+      "type": "text",
+      "id": "review_5_tag",
+      "label": "Review 5 Product Tag",
+      "default": "Turmeric Powder"
+    },
+    {
+      "type": "textarea",
+      "id": "review_6_text",
+      "label": "Review 6 Text",
+      "default": "Ordered the gift box for my mother and she absolutely loved it! Beautiful packaging and exceptional quality spices."
+    },
+    {
+      "type": "text",
+      "id": "review_6_name",
+      "label": "Review 6 Customer Name",
+      "default": "Michael T."
+    },
+    {
+      "type": "text",
+      "id": "review_6_location",
+      "label": "Review 6 Location",
+      "default": "Sydney, Australia"
+    },
+    {
+      "type": "text",
+      "id": "review_6_tag",
+      "label": "Review 6 Product Tag",
+      "default": "Gift Box"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Malabar Footer"
+    }
+  ]
+}
+{% endschema %}
