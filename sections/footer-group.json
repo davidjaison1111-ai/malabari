@@ -11,38 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "malabar_footer_4ybPAr": {
-      "type": "malabar-footer",
-      "name": "Malabar Footer",
-      "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "review_1_text": "The cardamom I received was absolutely premium quality. The aroma filled my entire kitchen when I opened the package!",
-        "review_1_name": "Priya S.",
-        "review_1_location": "Dubai, UAE",
-        "review_1_tag": "Green Cardamom",
-        "review_2_text": "Best black pepper I've ever used. The freshness and pungency are unmatched. Will definitely order again!",
-        "review_2_name": "Rajesh M.",
-        "review_2_location": "Mumbai, India",
-        "review_2_tag": "Black Pepper",
-        "review_3_text": "The cinnamon sticks are so fragrant and fresh. Perfect for my holiday baking. Packaging was beautiful too!",
-        "review_3_name": "Emily R.",
-        "review_3_location": "London, UK",
-        "review_3_tag": "Ceylon Cinnamon",
-        "review_4_text": "Amazing quality cloves! The aroma is incredible and they last so long. Great value for premium spices.",
-        "review_4_name": "Ahmed K.",
-        "review_4_location": "Singapore",
-        "review_4_tag": "Cloves",
-        "review_5_text": "The turmeric powder has such a vibrant color and earthy flavor. You can tell it's pure and high quality.",
-        "review_5_name": "Sarah J.",
-        "review_5_location": "Toronto, Canada",
-        "review_5_tag": "Turmeric Powder",
-        "review_6_text": "Ordered the gift box for my mother and she absolutely loved it! Beautiful packaging and exceptional quality spices.",
-        "review_6_name": "Michael T.",
-        "review_6_location": "Sydney, Australia",
-        "review_6_tag": "Gift Box"
-      }
-    },
     "footer": {
       "type": "footer",
       "disabled": true,
@@ -63,7 +31,6 @@
     }
   },
   "order": [
-    "malabar_footer_4ybPAr",
     "footer"
   ]
 }
