@@ -10,6 +10,12 @@
   margin-top: 0.2rem;
 }
 
+.contact__description {
+  max-width: 600px;
+  margin: 1.5rem auto 3rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
 .contact .field {
   margin-bottom: 1.5rem;
 }
@@ -20,20 +26,155 @@
   }
 }
 
-.contact__button {
-  margin-top: 3rem;
+/* Modern floating labels */
+.contact .field {
+  position: relative;
+}
+
+.contact .field__input {
+  padding-top: 1.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.contact .field__label {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.contact .field__input:focus ~ .field__label,
+.contact .field__input:not(:placeholder-shown) ~ .field__label,
+.contact textarea.field__input:focus ~ .field__label,
+.contact textarea.field__input:not(:placeholder-shown) ~ .field__label,
+.contact select.field__input:focus ~ .field__label,
+.contact select.field__input:not(:placeholder-shown) ~ .field__label {
+  top: 0.4rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.9);
+}
+
+.contact .optional-label {
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+/* Subject dropdown styling */
+.contact select.field__input {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Newsletter checkbox */
+.contact__newsletter-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(var(--color-foreground), 0.03);
+  border-radius: var(--inputs-radius-outset);
+}
+
+.contact__newsletter-checkbox input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.contact__newsletter-checkbox .checkbox__label {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* Enhanced button */
+.contact__button .button--large {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.contact__button .button__icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.contact__button .button:hover .button__icon {
+  transform: translateX(0.5rem);
+}
+
+.contact__button .button__icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Response time text */
+.contact__response-time {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+/* Success message styling */
+.contact__success-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: var(--inputs-radius-outset);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.contact__success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 1.5rem;
+  background: rgba(76, 175, 80, 0.2);
+  border-radius: 50%;
+  color: rgb(76, 175, 80);
+}
+
+.contact__success-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.contact__success-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: rgb(76, 175, 80);
+}
+
+.contact__success-text {
+  font-size: 1.6rem;
+  color: rgba(var(--color-foreground), 0.8);
+  line-height: 1.6;
 }
 
 @media screen and (min-width: 750px) {
   .contact__button {
     margin-top: 4rem;
   }
-}
-
-@media screen and (min-width: 750px) {
+  
   .contact__fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
+  }
+  
+  .contact__description {
+    margin: 2rem auto 4rem;
   }
 }
