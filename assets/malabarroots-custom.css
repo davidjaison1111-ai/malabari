@@ -1,55 +1,105 @@
 /* ==========================================================================
-   MALABARROOTS — Enterprise Brand Layer for Shopify "Taste" v15.5.0
-   Palette: Cream #FDFBF7 · Forest #1A432B · Gold #D4AF37 · Terracotta #A0522D
-   Text: Charcoal #2C2C2C (headings) · Slate #4B5563 (body)
+   MALABAR ROOTS — Editorial Organic Luxury Redesign v2026
+   Inspired by malabar-roots.html single-page demo
+   Palette: Forest #346B3C · Forest Deep #22482A · Forest Ink #1B3721
+            Moss #6E9B6A · Terracotta #BC5B2E · Honey #D89A4C · Honey Soft #E7C079
+            Ivory #FCFBF7 · Ivory-2 #F6F3EA · Ivory-3 #EFEBDE · Paper #FFFFFF
+            Ink #20261F · Ink Soft #5B6157 · Ink Faint #8A9082
+   Fonts: Fraunces (serif display) · Plus Jakarta Sans (body UI)
    ========================================================================== */
 
 :root {
-  --mr-cream: #fdfbf7;
-  --mr-forest: #1a432b;
-  --mr-forest-deep: #12301e;
-  --mr-gold: #d4af37;
-  --mr-terracotta: #a0522d;
-  --mr-charcoal: #2c2c2c;
-  --mr-slate: #4b5563;
-  --mr-radius: 12px;
-  --mr-shadow-soft: 0 6px 24px rgba(26, 67, 43, 0.08);
-  --mr-shadow-lift: 0 14px 34px rgba(26, 67, 43, 0.16);
+  /* Brand colors from malabar-roots.html */
+  --mr-forest: #346b3c;
+  --mr-forest-deep: #22482a;
+  --mr-forest-ink: #1b3721;
+  --mr-forest-soft: #4e8556;
+  --mr-moss: #6e9b6a;
+  --mr-terracotta: #bc5b2e;
+  --mr-honey: #d89a4c;
+  --mr-honey-soft: #e7c079;
+  
+  /* Backgrounds */
+  --mr-ivory: #fdfbf7;
+  --mr-ivory-2: #f6f3ea;
+  --mr-ivory-3: #efebde;
+  --mr-paper: #ffffff;
+  
+  /* Text */
+  --mr-charcoal: #20261f;
+  --mr-slate: #5b6157;
+  --mr-faint: #8a9082;
+  
+  /* UI */
+  --mr-line: #e4dfd1;
+  --mr-line-strong: #d6cfbb;
+  
+  /* Effects */
+  --mr-radius: 18px;
+  --mr-radius-lg: 26px;
+  --mr-shadow-sm: 0 1px 2px rgba(34,72,42,.05), 0 2px 8px rgba(34,72,42,.04);
+  --mr-shadow-md: 0 4px 14px rgba(34,72,42,.07), 0 12px 34px rgba(34,72,42,.06);
+  --mr-shadow-lg: 0 10px 30px rgba(34,72,42,.10), 0 30px 70px rgba(27,55,33,.10);
   --mr-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mr-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ---- Global type & texture ------------------------------------------- */
 body {
-  color: var(--mr-slate);
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3, h4, .h0, .h1, .h2, .h3 {
+  background: var(--mr-ivory);
   color: var(--mr-charcoal);
-  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--mr-forest-ink);
+  line-height: 1.05;
+}
+
+.body, p, .rte {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--mr-slate);
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
 }
 
 /* Buttery selection + focus */
-::selection { background: var(--mr-gold); color: var(--mr-forest-deep); }
-:focus-visible { outline: 2px solid var(--mr-gold); outline-offset: 3px; }
+::selection { 
+  background: var(--mr-forest); 
+  color: var(--mr-ivory); 
+}
 
-/* ---- Custom scrollbars (page + cart drawer) --------------------------- */
+:focus-visible { 
+  outline: 2px solid var(--mr-honey); 
+  outline-offset: 3px; 
+}
+
+/* ---- Custom scrollbars ------------------------------------------------ */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--mr-cream); }
+::-webkit-scrollbar-track { background: var(--mr-ivory-2); }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--mr-forest) 55%, var(--mr-cream));
+  background: color-mix(in srgb, var(--mr-forest) 55%, var(--mr-ivory));
   border-radius: 20px;
-  border: 2px solid var(--mr-cream);
+  border: 2px solid var(--mr-ivory-2);
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--mr-forest); }
+
 cart-drawer .drawer__contents::-webkit-scrollbar { width: 6px; }
 cart-drawer .drawer__contents::-webkit-scrollbar-thumb {
-  background: var(--mr-gold);
+  background: var(--mr-honey);
   border: none;
 }
 
